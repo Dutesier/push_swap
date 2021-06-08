@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_a.c                                         :+:      :+:    :+:   */
+/*   ft_sort_i.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/08 09:11:53 by dareias-          #+#    #+#             */
-/*   Updated: 2021/06/08 18:31:51 by dareias-         ###   ########.fr       */
+/*   Created: 2021/06/08 16:23:12 by dareias-          #+#    #+#             */
+/*   Updated: 2021/06/08 18:50:19 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int rotate_a(t_stack *a)
+int ft_sort_i(t_stack *a, t_stack *b, int uns)
 {
-	int temp;
-	int i;
-	int x;
+	int t;
+	int j;
 
-	if (a->top < 0)
-		return (0);
-	temp = a->table[a->top];
-	i = a->top;
-	x = i - 1;
-	while (i > 0)
-		a->table[i--] = a->table[x--];
-	a->table[i] = temp;
-	ft_putstr_fd("ra\n", 1);
-	return (1);
+	while (a->top > uns)
+		push_b(b, a);
+	t = a->top;
+	while (a->table[t] > a->table[t - 1])
+	{
+		swap_a(a);
+		j = is_sorted_i(a);
+		if (j > 0)
+		{
+			rotate_a(a);
+			ft_sort_i(a, b, j);
+		}
+		t--;
+	}
+	return (0);
 }
 

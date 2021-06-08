@@ -6,7 +6,7 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 16:52:20 by dareias-          #+#    #+#             */
-/*   Updated: 2021/06/08 13:16:51 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/06/08 16:56:30 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
 	
 	stack_printer(a, b, a->top, b->top); // -1 for ./swap_push and -1 for array null-indexing
 	
-	swap_a(a);
+/*	swap_a(a);
 	printf("Swap a\n");
 	stack_printer(a, b, a->top, b->top);
 	
@@ -98,7 +98,11 @@ int main(int argc, char *argv[])
 
 	rev_rotate_rrr(a, b);
 	printf("Rev Rotate rrr\n");
-	stack_printer(a, b, a->top, b->top); // -1 for ./swap_push and -1 for array null-indexing
+	stack_printer(a, b, a->top, b->top); // -1 for ./swap_push and -1 for array null-indexing*/
+
+	ft_sort_stacks(a, b);
+
+	stack_printer(a, b, a->top, b->top);
 	
 	return (0);
 }

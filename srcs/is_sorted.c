@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_a.c                                         :+:      :+:    :+:   */
+/*   is_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/08 09:11:53 by dareias-          #+#    #+#             */
-/*   Updated: 2021/06/08 18:31:51 by dareias-         ###   ########.fr       */
+/*   Created: 2021/06/08 15:42:12 by dareias-          #+#    #+#             */
+/*   Updated: 2021/06/08 16:13:18 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int rotate_a(t_stack *a)
+int is_sorted_i(t_stack *stack)
 {
-	int temp;
 	int i;
-	int x;
 
-	if (a->top < 0)
-		return (0);
-	temp = a->table[a->top];
-	i = a->top;
-	x = i - 1;
+	i = stack->top;
 	while (i > 0)
-		a->table[i--] = a->table[x--];
-	a->table[i] = temp;
-	ft_putstr_fd("ra\n", 1);
-	return (1);
+	{
+		if (stack->table[i] > stack->table[i - 1])
+			return (i);
+		i--;
+	}
+	return (0); // Here 0 means the array is szorted up until position 0 a.k.a fully
+}
+
+int is_sorted_d(t_stack *stack)
+{
+	int i;
+
+	i = stack->top;
+	while (i > 0)
+	{
+		if (stack->table[i] < stack->table[i - 1])
+			return (i);
+		i--;
+	}
+	return (0);
 }
 

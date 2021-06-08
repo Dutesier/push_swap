@@ -6,7 +6,7 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 09:34:03 by dareias-          #+#    #+#             */
-/*   Updated: 2021/06/08 11:00:48 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/06/08 18:32:14 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int rotate_b(t_stack *b)
 	while (i > 0)
 		b->table[i--] = b->table[x--];
 	b->table[i] = temp;
+	ft_putstr_fd("rb\n", 1);
 	return (1);
 }
 

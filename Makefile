@@ -13,6 +13,10 @@ SRCS =  main.c \
 		srcs/rev_rotate_b.c \
 		srcs/same_time.c \
 		srcs/error_checker.c \
+		srcs/is_sorted.c \
+		srcs/sorting.c \
+		srcs/ft_sort_i.c \
+		srcs/ft_sort_d.c \
 
 CC = gcc
 

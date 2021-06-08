@@ -6,7 +6,7 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 20:46:00 by dareias-          #+#    #+#             */
-/*   Updated: 2021/06/07 20:51:51 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/06/08 18:30:33 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int push_b(t_stack *b, t_stack *a)
 		return (0);
 	b->top++;
 	b->table[b->top] = a->table[a->top--];
+	ft_putstr_fd("pb\n", 1);
 	return (1);
 }
 

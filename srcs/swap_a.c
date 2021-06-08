@@ -6,7 +6,7 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 19:39:41 by dareias-          #+#    #+#             */
-/*   Updated: 2021/06/07 20:16:09 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/06/08 18:30:57 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int swap_a(t_stack *a)
 	temp = a->table[a->top];
 	a->table[a->top] = a->table[a->top - 1];
 	a->table[a->top - 1] = temp;
+	ft_putstr_fd("sa\n", 1);
 	return (1);
 }
 
