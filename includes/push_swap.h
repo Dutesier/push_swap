@@ -6,7 +6,7 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 14:06:09 by dareias-          #+#    #+#             */
-/*   Updated: 2021/06/07 20:44:43 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/06/08 10:19:20 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@ int swap_a(t_stack *a);
 int swap_b(t_stack *b);
 int push_a(t_stack *a, t_stack *b);
 int push_b(t_stack *b, t_stack *a);
+int rotate_a(t_stack *a);
+int rotate_b(t_stack *b);
+int rev_rotate_a(t_stack *a);
+int rev_rotate_b(t_stack *b);
 
 #endif
 

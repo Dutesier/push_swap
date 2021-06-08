@@ -6,7 +6,11 @@ SRCS =  main.c \
 		srcs/swap_a.c \
 		srcs/swap_b.c \
 		srcs/push_a.c \
-		srcs/push_b.c
+		srcs/push_b.c \
+		srcs/rotate_a.c \
+		srcs/rotate_b.c \
+		srcs/rev_rotate_a.c \
+		srcs/rev_rotate_b.c \
 
 CC = gcc
 
