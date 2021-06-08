@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_b.c                                         :+:      :+:    :+:   */
+/*   same_time.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/08 09:34:03 by dareias-          #+#    #+#             */
-/*   Updated: 2021/06/08 11:00:48 by dareias-         ###   ########.fr       */
+/*   Created: 2021/06/08 10:29:37 by dareias-          #+#    #+#             */
+/*   Updated: 2021/06/08 10:35:13 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int rotate_b(t_stack *b)
+int swap_ss(t_stack *a, t_stack *b)
 {
-	int temp;
-	int i;
-	int x;
+	return (swap_a(a) + swap_b(b));
+}
 
-	if (b->top < 0)
-		return (0);
-	temp = b->table[b->top];
-	i = b->top;
-	x = i - 1;
-	while (i > 0)
-		b->table[i--] = b->table[x--];
-	b->table[i] = temp;
-	return (1);
+int rotate_rr(t_stack *a, t_stack *b)
+{
+	return (rotate_a(a) + rotate_b(b));
+}
+
+int rev_rotate_rrr(t_stack *a, t_stack *b)
+{
+	return (rev_rotate_a(a) + rev_rotate_b(b));
 }
 

@@ -11,6 +11,8 @@ SRCS =  main.c \
 		srcs/rotate_b.c \
 		srcs/rev_rotate_a.c \
 		srcs/rev_rotate_b.c \
+		srcs/same_time.c \
+		srcs/error_checker.c \
 
 CC = gcc
 

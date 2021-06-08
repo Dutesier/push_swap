@@ -6,7 +6,7 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 10:18:20 by dareias-          #+#    #+#             */
-/*   Updated: 2021/06/08 10:18:55 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/06/08 11:04:11 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int rev_rotate_b(t_stack *b)
 	int temp;
 	int i;
 
+	if (b->top < 0)
+		return (0);
 	i = 0;
 	temp = b->table[0];
 	while (i < b->top)

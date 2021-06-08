@@ -6,7 +6,7 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 14:06:09 by dareias-          #+#    #+#             */
-/*   Updated: 2021/06/08 10:19:20 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/06/08 13:05:01 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ int rotate_a(t_stack *a);
 int rotate_b(t_stack *b);
 int rev_rotate_a(t_stack *a);
 int rev_rotate_b(t_stack *b);
+int swap_ss(t_stack *a, t_stack *b);
+int rotate_rr(t_stack *a, t_stack *b);
+int rev_rotate_rrr(t_stack *a, t_stack *b);
+int error_checker(int argc, char *argv[]);
+
 
 #endif
 
