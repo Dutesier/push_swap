@@ -1,43 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_i.c                                        :+:      :+:    :+:   */
+/*   find_highest.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/08 16:23:12 by dareias-          #+#    #+#             */
-/*   Updated: 2021/06/08 19:13:56 by dareias-         ###   ########.fr       */
+/*   Created: 2021/08/06 09:31:10 by dareias-          #+#    #+#             */
+/*   Updated: 2021/08/06 11:06:10 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int ft_sort_i(t_stack *a, t_stack *b, int uns)
+int find_highest(t_stack *stack)
 {
-	int t;
-	int j;
-	int g;
+	int i;
+	int highest;
+	int position;
 
-	g = 0;
-	while (a->top > uns)
+	i = 0;
+	highest = stack->table[i];
+	position = i;
+	if (stack->top <= 0)
+		return (-1);
+	while (i <= stack->top)
 	{
-		push_b(b, a);
-		g++;
-	}
-	if (g > 0)	
-		ft_sort_i(a, b, is_sorted_i(a));
-	t = a->top;
-	while (a->table[t] > a->table[t - 1])
-	{
-		swap_a(a);
-		j = is_sorted_i(a);
-		if (j > 0)
+		if (stack->table[i] > highest)
 		{
-			rotate_a(a);
-			ft_sort_i(a, b, j);
+			position = i;
+			highest = stack->table[i];
 		}
-		t--;
+		i++;
 	}
-	return (0);
+	return (position);
 }
 

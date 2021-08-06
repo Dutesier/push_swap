@@ -17,6 +17,9 @@ SRCS =  main.c \
 		srcs/sorting.c \
 		srcs/ft_sort_i.c \
 		srcs/ft_sort_d.c \
+		srcs/find_highest.c \
+		srcs/find_lowest.c \
+		srcs/push_half.c \
 
 CC = gcc
 

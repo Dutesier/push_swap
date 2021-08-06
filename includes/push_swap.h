@@ -6,7 +6,7 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 14:06:09 by dareias-          #+#    #+#             */
-/*   Updated: 2021/06/08 16:57:38 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/06 10:47:28 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,11 @@ int is_sorted_i(t_stack *stack);
 int is_sorted_d(t_stack *stack);
 int ft_sort_i(t_stack *a, t_stack *b, int uns);
 int ft_sort_d(t_stack *a, t_stack *b, int uns);
+
+int find_highest(t_stack *stack);
+int find_lowest(t_stack *stack);
+
+int push_half(t_stack *sending, t_stack *receiving, char push_to);
 
 #endif
 

@@ -1,43 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_i.c                                        :+:      :+:    :+:   */
+/*   find_lowest.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/08 16:23:12 by dareias-          #+#    #+#             */
-/*   Updated: 2021/06/08 19:13:56 by dareias-         ###   ########.fr       */
+/*   Created: 2021/08/06 10:17:47 by dareias-          #+#    #+#             */
+/*   Updated: 2021/08/06 11:05:59 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int ft_sort_i(t_stack *a, t_stack *b, int uns)
+int find_lowest(t_stack *stack)
 {
-	int t;
-	int j;
-	int g;
+	int i;
+	int lowest;
+	int position;
 
-	g = 0;
-	while (a->top > uns)
+	i = 0;
+	lowest = stack->table[i];
+	position = i;
+	printf("\nInnitial Lowest: %i\n", lowest);
+	if (stack->top <= 0)
+		return (-1);
+	while (i <= stack->top)
 	{
-		push_b(b, a);
-		g++;
-	}
-	if (g > 0)	
-		ft_sort_i(a, b, is_sorted_i(a));
-	t = a->top;
-	while (a->table[t] > a->table[t - 1])
-	{
-		swap_a(a);
-		j = is_sorted_i(a);
-		if (j > 0)
+		if (stack->table[i] < lowest)
 		{
-			rotate_a(a);
-			ft_sort_i(a, b, j);
+			position = i;
+			lowest = stack->table[i];
+			printf("\nFound new lowest: %i\n", lowest);
 		}
-		t--;
+		i++;
 	}
-	return (0);
+	return (position);
 }
 

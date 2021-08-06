@@ -1,43 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_i.c                                        :+:      :+:    :+:   */
+/*   push_half.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/08 16:23:12 by dareias-          #+#    #+#             */
-/*   Updated: 2021/06/08 19:13:56 by dareias-         ###   ########.fr       */
+/*   Created: 2021/08/06 10:35:47 by dareias-          #+#    #+#             */
+/*   Updated: 2021/08/06 11:03:09 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int ft_sort_i(t_stack *a, t_stack *b, int uns)
+int push_half(t_stack *sending, t_stack *receiving, char push_to)
 {
-	int t;
-	int j;
-	int g;
+	int i;
+	int half;
 
-	g = 0;
-	while (a->top > uns)
+	if (sending->top < 1)
+		return (-1);
+	half = (sending->top + 1) / 2;
+	i = 0;
+	while (i < half)
 	{
-		push_b(b, a);
-		g++;
+		if (push_to == 'a')
+			push_a(receiving, sending);
+		else
+			push_b(receiving, sending);
+		i++;
 	}
-	if (g > 0)	
-		ft_sort_i(a, b, is_sorted_i(a));
-	t = a->top;
-	while (a->table[t] > a->table[t - 1])
-	{
-		swap_a(a);
-		j = is_sorted_i(a);
-		if (j > 0)
-		{
-			rotate_a(a);
-			ft_sort_i(a, b, j);
-		}
-		t--;
-	}
-	return (0);
-}
+	return (i);
+}	
 
