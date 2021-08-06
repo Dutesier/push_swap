@@ -6,7 +6,7 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 10:18:20 by dareias-          #+#    #+#             */
-/*   Updated: 2021/06/08 11:04:11 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/06 16:35:32 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int rev_rotate_b(t_stack *b)
 		i++;
 	}
 	b->table[b->top] = temp;
+	ft_putstr_fd("rrb\n", 1);
 	return (1);
 }
 

@@ -6,39 +6,37 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 15:38:13 by dareias-          #+#    #+#             */
-/*   Updated: 2021/06/08 18:55:47 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/06 17:29:36 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static int ft_recompile(t_stack *a, t_stack *b)
+int ft_sort(t_stack *a, t_stack *b)
 {
-	while (b->top > -1)
-		push_a(a, b);
-	return(is_sorted_i(a));
+	if (is_sorted_i(a) != 0)
+		return (ft_sort_stacks(a, b));
+	else
+		return (0);
 }
 
 int ft_sort_stacks(t_stack *a, t_stack *b)
 {
-	int sorted_a;
-	int sorted_b;
-	
-	while (1)
-	{
-		sorted_a = is_sorted_i(a);
-		sorted_b = is_sorted_d(b);
+	int moves;
+	int median;
 
-		if (sorted_a + sorted_b == 0)
-			if (ft_recompile(a, b) == 0)
-				return (0);
-		if (sorted_a > 0)
-		{
-			ft_sort_i(a, b, sorted_a);
-			sorted_b = is_sorted_d(b);
-		}
-		if (sorted_b > 0)
-			ft_sort_d(a, b, sorted_b);
-	}
+	moves = 0;
+	median = find_median(a, 0, 0);
+	moves += div_by_median(a, b, median);
+	while (b->top >= 0)
+		moves += sort_from_b(a, b);
+	moves += ft_reorganize(a);
+	if (is_sorted_i(a) == 0)
+		return (moves);
+	moves += div_after_median(a, b, median);
+	while (b->top >= 0)
+		moves += sort_from_b(a, b);
+	moves += ft_reorganize(a);
+	return (moves);
 }
 

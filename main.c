@@ -6,7 +6,7 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 16:52:20 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/06 10:49:45 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/06 17:28:14 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void stack_printer(t_stack *a, t_stack *b, int size_a, int size_b)
 {
 	int size;
 
-	printf("A->TOP: %i; B->TOP: %i;\n", size_a, size_b);
+	printf("\n");
 	if (size_a >= size_b)
 		size = size_a;
 	else
@@ -100,17 +100,18 @@ int main(int argc, char *argv[])
 	printf("Rev Rotate rrr\n");
 	stack_printer(a, b, a->top, b->top); // -1 for ./swap_push and -1 for array null-indexing*/
 
-	//ft_sort_stacks(a, b);
-	push_half(a, b, 'b');
+	int median = find_median(a, 0, 0);
+	//printf("\nMedian: %i\n", median);
+	int moves = ft_sort(a, b);
 	stack_printer(a, b, a->top, b->top);
-	
-	int higha = find_highest(a);
+	printf("Moves: %i\n", moves);	
+	/*int higha = find_highest(a);
 	int lowa = find_lowest(a);
 	int highb = find_highest(b);
 	int lowb = find_lowest(b);
 	printf("Highest A: %i, Lowest A: %i\n", higha, lowa);
 	printf("Highest B: %i, Lowest B: %i\n", highb, lowb);
-
+*/
 	return (0);
 }
 

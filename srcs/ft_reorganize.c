@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_highest.c                                     :+:      :+:    :+:   */
+/*   ft_reorganize.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/06 09:31:10 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/06 17:35:22 by dareias-         ###   ########.fr       */
+/*   Created: 2021/08/06 16:22:35 by dareias-          #+#    #+#             */
+/*   Updated: 2021/08/06 16:31:28 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int find_highest(t_stack *stack)
+int ft_reorganize(t_stack *a)
 {
 	int i;
-	int highest;
-	int position;
-
-	i = 0;
-	highest = stack->table[i];
-	position = i;
-	if (stack->top <= 0)
-		return (0);
-	while (i <= stack->top)
+	int moves;
+	i = a->top;
+	moves = 0;
+	while (a->table[0] < a->table[a->top])
 	{
-		if (stack->table[i] > highest)
-		{
-			position = i;
-			highest = stack->table[i];
-		}
-		i++;
+		rev_rotate_a(a);
+		moves++;
 	}
-	return (position);
+	return (moves);
 }
 

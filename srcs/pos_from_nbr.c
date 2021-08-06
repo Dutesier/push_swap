@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_d.c                                        :+:      :+:    :+:   */
+/*   pos_from_nbr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/08 16:23:27 by dareias-          #+#    #+#             */
-/*   Updated: 2021/06/08 18:50:48 by dareias-         ###   ########.fr       */
+/*   Created: 2021/08/06 12:37:07 by dareias-          #+#    #+#             */
+/*   Updated: 2021/08/06 12:39:24 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int ft_sort_d(t_stack *a, t_stack *b, int uns)
+int pos_from_nbr(t_stack *stack, int nbr)
 {
-	int t;
-	int j;
+	int i;
 
-	t = b->top;
-	while (b->table[t] < b->table[t - 1])
+	i = 0;
+	while (i <= stack->top)
 	{
-		swap_b(b);
-		j = is_sorted_d(b);
-		if (j > 0)
-		{
-			rotate_b(b);
-			ft_sort_d(a, b, j);
-		}
-		t--;
+		if (stack->table[i] == nbr)
+			return (i);
+		i++;
 	}
-	return (0);
+	return (-1);
 }
 

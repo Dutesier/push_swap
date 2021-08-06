@@ -15,11 +15,16 @@ SRCS =  main.c \
 		srcs/error_checker.c \
 		srcs/is_sorted.c \
 		srcs/sorting.c \
-		srcs/ft_sort_i.c \
-		srcs/ft_sort_d.c \
 		srcs/find_highest.c \
 		srcs/find_lowest.c \
 		srcs/push_half.c \
+		srcs/find_median.c \
+		srcs/pos_from_nbr.c \
+		srcs/divide_stacks.c \
+		srcs/ft_math.c \
+		srcs/sort_from_b.c \
+		srcs/smart_rotate.c \
+		srcs/ft_reorganize.c \
 
 CC = gcc
 

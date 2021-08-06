@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_highest.c                                     :+:      :+:    :+:   */
+/*   find_median.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/06 09:31:10 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/06 17:35:22 by dareias-         ###   ########.fr       */
+/*   Created: 2021/08/06 12:13:05 by dareias-          #+#    #+#             */
+/*   Updated: 2021/08/06 12:34:07 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int find_highest(t_stack *stack)
+int find_median(t_stack *stack, int i, int median)
 {
-	int i;
-	int highest;
-	int position;
+	int j;
+	int new_higher;
 
-	i = 0;
-	highest = stack->table[i];
-	position = i;
-	if (stack->top <= 0)
-		return (0);
 	while (i <= stack->top)
 	{
-		if (stack->table[i] > highest)
+		j = 0;
+		new_higher = 0;
+		while (j <= stack->top)
 		{
-			position = i;
-			highest = stack->table[i];
+			if (stack->table[j] > stack->table[i])
+				new_higher++;
+			j++;
 		}
+		if (new_higher == (stack->top / 2))
+			median = stack->table[i];
 		i++;
 	}
-	return (position);
+	return (median);
 }
-
