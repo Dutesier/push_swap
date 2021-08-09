@@ -6,7 +6,7 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 14:06:09 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/06 17:27:37 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/09 17:53:20 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int rev_rotate_rrr(t_stack *a, t_stack *b);
 int error_checker(int argc, char *argv[]);
 
 int ft_sort(t_stack *a, t_stack *b);
-int ft_sort_stacks(t_stack *a, t_stack *b);
+int ft_sort_median(t_stack *a, t_stack *b);
 
 int is_sorted_i(t_stack *stack);
 int is_sorted_d(t_stack *stack);
@@ -62,7 +62,13 @@ int pos_from_nbr(t_stack *stack, int nbr);
 int div_by_median(t_stack *a, t_stack *b, int median);
 int div_after_median(t_stack *a, t_stack *b, int median);
 
+
+int sort_small(t_stack *a, t_stack *b);
+int sort_three(t_stack *a, t_stack *b);
+int sort_five(t_stack *a, t_stack *b);
+
 int smart_rotate(t_stack *stack, int position);
+int to_top_a(t_stack *stack, int smart);
 int sort_from_b(t_stack *a, t_stack *b);
 int ft_reorganize(t_stack *a);
 

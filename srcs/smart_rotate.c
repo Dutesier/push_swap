@@ -6,7 +6,7 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 11:38:24 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/06 12:00:53 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/09 17:52:18 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,20 @@ int smart_rotate(t_stack *stack, int position)
 		return (-to_bot);
 }
 
+int to_top_a(t_stack *stack, int smart)
+{
+	int i;
+	int moves;
+
+	i = 0;
+	moves = 0;
+	if (smart == 0)
+		return (0);
+	while (i < smart)
+		i += rotate_a(stack);
+	if (smart > 0)
+		return (i);
+	while (i > smart)
+		i -= rev_rotate_a(stack);
+	return (-i);
+}

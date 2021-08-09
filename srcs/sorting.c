@@ -6,7 +6,7 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 15:38:13 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/06 17:29:36 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/09 17:58:21 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,17 @@
 int ft_sort(t_stack *a, t_stack *b)
 {
 	if (is_sorted_i(a) != 0)
-		return (ft_sort_stacks(a, b));
+	{
+		if (a->size < 6)
+			return (sort_small(a, b));
+		else
+			return (ft_sort_median(a, b));
+	}
 	else
 		return (0);
 }
 
-int ft_sort_stacks(t_stack *a, t_stack *b)
+int ft_sort_median(t_stack *a, t_stack *b)
 {
 	int moves;
 	int median;
