@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_median.c                                      :+:      :+:    :+:   */
+/*   sort_big.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/06 12:13:05 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/11 11:10:48 by dareias-         ###   ########.fr       */
+/*   Created: 2021/08/11 09:37:33 by dareias-          #+#    #+#             */
+/*   Updated: 2021/08/11 11:22:29 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int find_median(t_stack *s, int i, int u, int l)
+int sort_big(t_stack *a, t_stack *b)
 {
-	int j;
-	int higher;
-	int median;
+	int high;
+	int low;
 
-	median = 0;
-	while (i <= s->top)
-	{
-		j = 0;
-		higher = 0;
-		while (j <= s->top)
-		{
-			if ((s->table[j] > s->table[i]) && (s->table[i] < u) && (s->table[i] >= l))
-				higher++;
-			j++;
-		}
-		if (higher == (s->top / 2))
-			median = s->table[i];
-		i++;
-	}
-	return (median);
+	high = find_highest(a);
+	printf("\nHIGH: %i **************************\n", high);
+	low = find_lowest(a);
+	if (a->size < 500)
+		return (ft_sort_median(a, b, high, low));
+	else
+		return (ft_sort_quarters(a, b, a->table[high], a->table[low]));
+
 }
+

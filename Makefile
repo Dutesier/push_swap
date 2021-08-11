@@ -26,6 +26,8 @@ SRCS =  main.c \
 		srcs/smart_rotate.c \
 		srcs/ft_reorganize.c \
 		srcs/sort_small.c \
+		srcs/sort_big.c \
+		srcs/find_closest.c \
 
 CC = gcc
 

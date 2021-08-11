@@ -6,7 +6,7 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 14:06:09 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/09 17:53:20 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/11 11:10:22 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int rev_rotate_rrr(t_stack *a, t_stack *b);
 int error_checker(int argc, char *argv[]);
 
 int ft_sort(t_stack *a, t_stack *b);
-int ft_sort_median(t_stack *a, t_stack *b);
+int ft_sort_median(t_stack *a, t_stack *b, int u, int l);
 
 int is_sorted_i(t_stack *stack);
 int is_sorted_d(t_stack *stack);
@@ -57,7 +57,7 @@ int find_highest(t_stack *stack);
 int find_lowest(t_stack *stack);
 
 int push_half(t_stack *sending, t_stack *receiving, char push_to);
-int find_median(t_stack *stack, int i, int median);
+int find_median(t_stack *stack, int i, int u, int l);
 int pos_from_nbr(t_stack *stack, int nbr);
 int div_by_median(t_stack *a, t_stack *b, int median);
 int div_after_median(t_stack *a, t_stack *b, int median);
@@ -76,5 +76,9 @@ int ft_min(int a, int b);
 int ft_smaller_than(t_stack *stack, int bench);
 int ft_abs(int x);
 
+int sort_big(t_stack *a, t_stack *b);
+int ft_sort_quarters(t_stack *a, t_stack *b, int u, int l);
+
+int div_interval(t_stack *a, t_stack *b, int u, int l);
 #endif
 

@@ -6,7 +6,7 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 16:52:20 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/09 18:20:51 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/11 11:14:26 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,10 +100,10 @@ int main(int argc, char *argv[])
 	printf("Rev Rotate rrr\n");
 	stack_printer(a, b, a->top, b->top); // -1 for ./swap_push and -1 for array null-indexing*/
 
-	int median = find_median(a, 0, 0);
+	//int median = find_median(a, 0, 0);
 	//printf("\nMedian: %i\n", median);
 	int moves = ft_sort(a, b);
-	//stack_printer(a, b, a->top, b->top);
+	stack_printer(a, b, a->top, b->top);
 	printf("Moves: %i\n", moves);	
 	/*int higha = find_highest(a);
 	int lowa = find_lowest(a);

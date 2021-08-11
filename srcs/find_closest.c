@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_median.c                                      :+:      :+:    :+:   */
+/*   find_closest.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/06 12:13:05 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/11 11:10:48 by dareias-         ###   ########.fr       */
+/*   Created: 2021/08/11 09:42:31 by dareias-          #+#    #+#             */
+/*   Updated: 2021/08/11 09:49:00 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int find_median(t_stack *s, int i, int u, int l)
+int find_closest(t_stack *stack, int target)
 {
-	int j;
-	int higher;
-	int median;
+	int i;
+	int close;
+	int goal;
 
-	median = 0;
-	while (i <= s->top)
+	i = 0;
+	close = ft_abs(target - stack->table[0]);
+	goal = 0;
+	while (i <= stack->top)
 	{
-		j = 0;
-		higher = 0;
-		while (j <= s->top)
-		{
-			if ((s->table[j] > s->table[i]) && (s->table[i] < u) && (s->table[i] >= l))
-				higher++;
-			j++;
-		}
-		if (higher == (s->top / 2))
-			median = s->table[i];
+		if (ft_abs(target - stack->table[i]) < close)
+			goal = i;
 		i++;
 	}
-	return (median);
+	return (goal);
 }
+
