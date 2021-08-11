@@ -6,7 +6,7 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 15:38:13 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/11 11:18:48 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/11 11:32:18 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,11 +74,10 @@ int ft_sort_quarters(t_stack *a, t_stack *b, int u, int l)
 	moves += quarter_org(a, b);
 
 	quarter = find_median(a, 0, u, median);
-	printf("\nQuarter: %i U: %i, Median: %i\n", quarter, u , median);
 	moves += div_interval(a, b, quarter, median);
 	moves += quarter_org(a, b);
 
-	moves += div_interval(a, b, u, quarter);
+	moves += div_interval(a, b, u + 1, quarter);
 	moves += quarter_org(a, b);
 	
 	if (is_sorted_i(a) == 0)
