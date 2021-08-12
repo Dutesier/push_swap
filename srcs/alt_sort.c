@@ -6,7 +6,7 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 12:57:06 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/12 10:42:59 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/12 11:11:16 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,60 +17,13 @@
 // For all elements being pushed.
 // We probably want to start by pushing some elements to b
 
-int cost_of_a(t_stack *a, int upper, int lower) // How far is the first elem
+int cob_aux(t_stack *b, int target, int i)
 {
-	int i;
 	int closest;
 	int sec;
-
-	i = a->top;
-	while (i >= -1)
-	{
-		if (a->table[i] < upper && a->table[i] > lower)
-		{
-			closest = i;
-			break ;
-		}
-		i--;
-	}
-	i = 0;
-	while (i <= a->top)
-	{
-		if (a->table[i] < upper && a->table[i] > lower)
-		{
-			sec = i;
-			break ;
-		}
-		i++;
-	}
-	return (ft_min(sec, closest));
-}
-
-int cost_of_b(t_stack *b, int target) // How far is the first interval that a fits into  i - 1
-{
-	int i;
-	int sec;
-	int closest;
-	int high;
-	int low;
 	
-	i = b->top;
 	closest = 0;
 	sec = 0;
-	high = find_highest(b);
-	low = find_lowest(b);
-	//printf("\nb->table[%i] = %i ,  target = %i\n", i, b->table[i], target);
-	if (b->table[i] < target && target < b->table[0]) // if the item in a is bigger than the top of b and smaller than the bot of b 		
-		return (i);
-	if (b->table[high] < target)
-		return (high);
-	if (b->table[low] > target)
-	{
-		if (low == 0)
-			return (b->top);
-		else
-			return (low - 1);
-	}
 	while (i - 1 >= -1)
 	{
 		if (b->table[i] > target && b->table[i - 1] < target)
@@ -79,7 +32,7 @@ int cost_of_b(t_stack *b, int target) // How far is the first interval that a fi
 			break ;
 		}
 		i--;
-	} // i = 3 -> checks [3] > target > [2] -> i = 2 -> i = 1 -> i = 0
+	}
 	i = 0;
 	while (i + 1 <= b->top)
 	{
@@ -90,13 +43,32 @@ int cost_of_b(t_stack *b, int target) // How far is the first interval that a fi
 		}
 		i++;
 	}
-	//printf("\n Cost of b: Closest = %i , Sec = %i \n", closest, sec);
 	return (ft_min(sec, closest));
 }
 
-// With best move I want to check what is the lowest: a, b or a mix of a + b
-// To check for mix I want to see if the increase in the cost of A would justify the change in cost of B
-// For every a right now calculate cost a + cost of b (for that a)
+int cost_of_b(t_stack *b, int target) 
+{
+	int i;
+	int high;
+	int low;
+	
+	i = b->top;
+	high = find_highest(b);
+	low = find_lowest(b);
+	if (b->table[i] < target && target < b->table[0]) 		
+		return (i);
+	if (b->table[high] < target)
+		return (high);
+	if (b->table[low] > target)
+	{
+		if (low == 0)
+			return (b->top);
+		else
+			return (low - 1);
+	}
+	return (cob_aux(b, target, i));
+}
+
 int best_move(t_stack *a, t_stack *b)
 {
 	int best;
@@ -109,13 +81,11 @@ int best_move(t_stack *a, t_stack *b)
 	best_a = 0;
 	while (i <= a->top)
 	{
-		best = ft_abs(smart_rotate(b, cost_of_b(b, a->table[i]))) + ft_abs(smart_rotate(a, i));//what would i need to change in b so that this element would fit
-		//printf("\nbest for %i = ft_abs(smart_rotate(a, i) + ft_abs(smart_rotate(b, cost_of_b(b, a->table[i]))) ------ %i + %i\n", a->table[i], ft_abs(smart_rotate(a,i)), ft_abs(smart_rotate(b, cost_of_b(b, a->table[i]))));//what would i need to change in b so that this element would fit
-
+		best = ft_abs(smart_rotate(b, cost_of_b(b, a->table[i]))) + ft_abs(smart_rotate(a, i));
 		if (best < lowest)
 		{
 			lowest = best;
-			best_a = i; // i'll smart_rotate this a (a->table[i]) if need be 
+			best_a = i; 
 		}
 		i++;
 	}
@@ -129,8 +99,6 @@ int do_best(t_stack *a, t_stack *b, int best_a)
 
 	best_b = smart_rotate(b, cost_of_b(b, a->table[best_a]));
 	best_a = smart_rotate(a, best_a);
-	//printf("\nBest move: a - %i , b - %i\n", best_a, best_b);	
-	//stack_printer(a, b, a->top, b->top); // -1 for ./swap_push and -1 for array null-indexing
 	moves = 0;
 	if (best_a < 0 && best_b < 0)
 		moves += best_neg(a, b, best_a, best_b);

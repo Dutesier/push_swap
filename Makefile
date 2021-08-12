@@ -17,18 +17,12 @@ SRCS =  main.c \
 		srcs/sorting.c \
 		srcs/find_highest.c \
 		srcs/find_lowest.c \
-		srcs/push_half.c \
-		srcs/find_median.c \
 		srcs/pos_from_nbr.c \
-		srcs/divide_stacks.c \
 		srcs/ft_math.c \
-		srcs/sort_from_b.c \
 		srcs/smart_rotate.c \
 		srcs/ft_reorganize.c \
 		srcs/sort_small.c \
-		srcs/sort_big.c \
 		srcs/find_closest.c \
-		srcs/sort_huge.c \
 		srcs/alt_sort.c \
 		srcs/alt_sort_aux.c \
 
@@ -53,5 +47,9 @@ clean :
 fclean : clean
 	$(MAKE) fclean -C ./libft
 	rm -rf $(NAME)
+
+sanitize : fclean $(OBJS)
+	$(MAKE) -C ./libft
+	$(CC) $(FLAGS) -fsanitize=address libft/libft.a $(INCLUDES) $(SRCS) -o push_swap
 
 re : fclean all

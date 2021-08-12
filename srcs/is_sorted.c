@@ -6,7 +6,7 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 15:42:12 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/11 23:57:17 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/12 11:00:23 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int is_sorted_i(t_stack *stack)
 			return (i);
 		i--;
 	}
-	return (0); // Here 0 means the array is szorted up until position 0 a.k.a fully
+	return (0); 
 }
 
 int is_sorted_d(t_stack *stack)

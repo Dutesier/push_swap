@@ -6,7 +6,7 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 11:38:24 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/11 20:42:10 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/12 11:42:40 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,8 @@ int smart_rotate(t_stack *stack, int position)
 int to_top_a(t_stack *stack, int smart)
 {
 	int i;
-	int moves;
 
 	i = 0;
-	moves = 0;
 	if (smart == 0)
 		return (0);
 	while (i < smart)

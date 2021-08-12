@@ -6,7 +6,7 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 17:00:04 by dareias-          #+#    #+#             */
-/*   Updated: 2021/06/08 13:06:55 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/12 11:35:05 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static int is_repeat(t_stack *a)
 
 t_stack *populate_a(t_stack *stack, char *population[])
 {
-	int i;
+	unsigned i;
 	int x;
 
 	i = 0;
