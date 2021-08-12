@@ -6,7 +6,7 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 14:06:09 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/11 11:10:22 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/11 23:48:56 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ typedef struct s_stack
 
 t_stack *stackInit(unsigned size);
 t_stack *populate_a(t_stack *stack, char *population[]);
+
+// REMOVE THIS!!!!!!!!
+void stack_printer(t_stack *a, t_stack *b, int size_a, int size_b);
 
 int swap_a(t_stack *a);
 int swap_b(t_stack *b);
@@ -71,14 +74,30 @@ int smart_rotate(t_stack *stack, int position);
 int to_top_a(t_stack *stack, int smart);
 int sort_from_b(t_stack *a, t_stack *b);
 int ft_reorganize(t_stack *a);
+int ft_reorganize_b(t_stack *b);
 
 int ft_min(int a, int b);
 int ft_smaller_than(t_stack *stack, int bench);
 int ft_abs(int x);
 
 int sort_big(t_stack *a, t_stack *b);
+int sort_huge(t_stack *a, t_stack *b, int u, int l);
 int ft_sort_quarters(t_stack *a, t_stack *b, int u, int l);
 
+int quarter_org(t_stack *a, t_stack *b);
 int div_interval(t_stack *a, t_stack *b, int u, int l);
+
+
+int back_to_a(t_stack *a, t_stack *b);
+int do_best(t_stack *a, t_stack *b, int best_a);
+int best_move(t_stack *a, t_stack *b);
+int cost_of_b(t_stack *b, int target);
+int cost_of_a(t_stack *a, int upper, int lower);
+int alt_sort(t_stack *a, t_stack *b);
+int best_mix(t_stack *a, t_stack *b, int best_a, int best_b);
+int best_pos(t_stack *a, t_stack *b, int best_a, int best_b);
+int best_neg(t_stack *a, t_stack *b, int best_a, int best_b);
+int three_b(t_stack *b);
+
 #endif
 

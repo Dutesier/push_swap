@@ -6,7 +6,7 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 13:00:45 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/06 18:19:16 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/12 09:34:23 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int ft_smaller_than(t_stack *stack, int bench)
 int ft_abs(int x)
 {
 	if (x < 0)
-		x = -x;
+		x = x * -1;
 	return (x);
 }
 

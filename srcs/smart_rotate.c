@@ -6,7 +6,7 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 11:38:24 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/09 17:52:18 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/11 20:42:10 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int smart_rotate(t_stack *stack, int position)
 	int to_bot;
 
 	to_top = stack->top - position;
-	to_bot = position + 1; 
+	to_bot = position + 1;
 	if (to_top < to_bot)
 		return (to_top);
 	else

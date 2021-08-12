@@ -28,6 +28,9 @@ SRCS =  main.c \
 		srcs/sort_small.c \
 		srcs/sort_big.c \
 		srcs/find_closest.c \
+		srcs/sort_huge.c \
+		srcs/alt_sort.c \
+		srcs/alt_sort_aux.c \
 
 CC = gcc
 

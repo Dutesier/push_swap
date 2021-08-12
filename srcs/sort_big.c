@@ -6,7 +6,7 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 09:37:33 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/11 11:22:29 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/11 16:55:10 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 int sort_big(t_stack *a, t_stack *b)
 {
-	int high;
-	int low;
+	//int high;
+	//int low;
 
-	high = find_highest(a);
-	printf("\nHIGH: %i **************************\n", high);
-	low = find_lowest(a);
-	if (a->size < 500)
-		return (ft_sort_median(a, b, high, low));
-	else
-		return (ft_sort_quarters(a, b, a->table[high], a->table[low]));
-
+	//high = find_highest(a);
+	//low = find_lowest(a);
+	//if (a->size < 100)
+	//	return (ft_sort_median(a, b, high, low));
+	//if (a->size >= 100 && a->size < 500)
+	//	return (ft_sort_quarters(a, b, a->table[high], a->table[low]));
+	//else
+		return (alt_sort(a, b));
 }
 

@@ -6,7 +6,7 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 15:42:12 by dareias-          #+#    #+#             */
-/*   Updated: 2021/06/08 16:13:18 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/11 23:57:17 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ int is_sorted_d(t_stack *stack)
 {
 	int i;
 
-	i = stack->top;
-	while (i > 0)
+	i = stack->top - 1;
+	while (i >= 0)
 	{
-		if (stack->table[i] < stack->table[i - 1])
-			return (i);
+		if (stack->table[i + 1] < stack->table[i])
+			return (i + 1);
 		i--;
 	}
 	return (0);

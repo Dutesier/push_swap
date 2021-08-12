@@ -6,7 +6,7 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 16:52:20 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/11 11:31:31 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/12 10:41:07 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ void stack_printer(t_stack *a, t_stack *b, int size_a, int size_b)
 		if (size_a >= size)
 			printf("%i", a->table[size]);
 		else
-			printf(" ");
+			printf("   ");
 		if (size_b >= size)
-			printf(" %i\n", b->table[size]);
+			printf("   %i\n", b->table[size]);
 		else
 			printf("\n");
 		size--;
 	}
-	printf("\n- -\na b\n\n");
+	printf("\n-   -\na   b\n\n");
 	return ;
 }
 

@@ -6,7 +6,7 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 15:38:13 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/11 11:32:18 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/11 12:20:57 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int ft_sort_median(t_stack *a, t_stack *b, int u, int l)
 	return (moves);
 }
 
-static int quarter_org(t_stack *a, t_stack *b)
+int quarter_org(t_stack *a, t_stack *b)
 {
 	int moves;
 
