@@ -6,7 +6,7 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 10:17:47 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/06 17:35:37 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/16 18:58:10 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int find_lowest(t_stack *stack)
 		return (0);
 	while (i <= stack->top)
 	{
-		if (stack->table[i] < lowest)
+		if (stack->table[i] <= lowest)
 		{
 			position = i;
 			lowest = stack->table[i];

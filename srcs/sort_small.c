@@ -6,7 +6,7 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 16:12:37 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/12 11:36:30 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/16 19:11:50 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int sort_three(t_stack *a)
 
 	high = find_highest(a);
 	low = find_lowest(a);
+	if (is_sorted_i(a) == 0)
+		return (0);
 	if (high == 0) 
 		return (swap_a(a));
 	if (high == 1 && low == 0)
