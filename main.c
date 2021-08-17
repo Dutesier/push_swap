@@ -6,7 +6,7 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 16:52:20 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/17 13:14:06 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/17 14:17:47 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int argc, char *argv[])
 {
 	t_stack	*a;
 	t_stack	*b;
-	t_stack *x;
+	t_stack	*x;
 	int		moves;
 
 	if (argc <= 1)
@@ -36,11 +36,8 @@ int	main(int argc, char *argv[])
 		ft_putstr_fd("Error\n", 1);
 		return (0);
 	}
-	//printf("Initializing a\n");
 	a = stackInit(argc - 1);
-	//printf("Initializing b\n");
 	b = stackInit(argc - 1);
-	//printf("Populating a\n");
 	x = populate_a(a, argv);
 	if (x <= 0)
 	{
