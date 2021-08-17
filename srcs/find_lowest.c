@@ -6,17 +6,17 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 10:17:47 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/16 18:58:10 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/17 11:28:53 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int find_lowest(t_stack *stack)
+int	find_lowest(t_stack *stack)
 {
-	int i;
-	int lowest;
-	int position;
+	int	i;
+	int	lowest;
+	int	position;
 
 	i = 0;
 	lowest = stack->table[i];
@@ -34,4 +34,3 @@ int find_lowest(t_stack *stack)
 	}
 	return (position);
 }
-

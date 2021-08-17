@@ -6,15 +6,15 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 12:37:07 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/06 12:39:24 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/17 11:33:37 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int pos_from_nbr(t_stack *stack, int nbr)
+int	pos_from_nbr(t_stack *stack, int nbr)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i <= stack->top)
@@ -25,4 +25,3 @@ int pos_from_nbr(t_stack *stack, int nbr)
 	}
 	return (-1);
 }
-

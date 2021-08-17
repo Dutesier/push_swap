@@ -6,13 +6,13 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 12:57:38 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/12 11:00:10 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/17 11:27:40 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static int str_check(char *str)
+static int	str_check(char *str)
 {
 	unsigned long	atoix;
 	int				neg;
@@ -39,9 +39,9 @@ static int str_check(char *str)
 	return (1);
 }
 
-int error_checker(int argc, char *argv[])
+int	error_checker(int argc, char *argv[])
 {
-	int i;
+	int	i;
 
 	i = 1;
 	while (i < argc)
@@ -51,4 +51,3 @@ int error_checker(int argc, char *argv[])
 	}
 	return (1);
 }
-

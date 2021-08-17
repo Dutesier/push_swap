@@ -6,13 +6,13 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 20:46:00 by dareias-          #+#    #+#             */
-/*   Updated: 2021/06/08 18:30:33 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/17 11:34:04 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int push_b(t_stack *b, t_stack *a)
+int	push_b(t_stack *b, t_stack *a)
 {
 	if (a->top <= -1)
 		return (0);
@@ -21,4 +21,3 @@ int push_b(t_stack *b, t_stack *a)
 	ft_putstr_fd("pb\n", 1);
 	return (1);
 }
-

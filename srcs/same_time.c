@@ -6,22 +6,22 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 10:29:37 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/12 09:21:44 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/17 11:36:34 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int swap_ss(t_stack *a, t_stack *b)
+int	swap_ss(t_stack *a, t_stack *b)
 {
 	return (swap_a(a) + swap_b(b));
 }
 
-int rotate_rr(t_stack *a, t_stack *b)
+int	rotate_rr(t_stack *a, t_stack *b)
 {
-	int temp;
-	int i;
-	int x;
+	int	temp;
+	int	i;
+	int	x;
 
 	if (a->top < 0 && b->top < 0)
 		return (0);
@@ -41,10 +41,10 @@ int rotate_rr(t_stack *a, t_stack *b)
 	return (1);
 }
 
-int rev_rotate_rrr(t_stack *a, t_stack *b)
+int	rev_rotate_rrr(t_stack *a, t_stack *b)
 {
-	int temp;
-	int i;
+	int	temp;
+	int	i;
 
 	if (a->top < 0 && b->top < 0)
 		return (0);
@@ -67,4 +67,3 @@ int rev_rotate_rrr(t_stack *a, t_stack *b)
 	ft_putstr_fd("rrr\n", 1);
 	return (1);
 }
-

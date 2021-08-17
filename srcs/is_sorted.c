@@ -6,15 +6,15 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 15:42:12 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/12 11:00:23 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/17 11:30:47 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int is_sorted_i(t_stack *stack)
+int	is_sorted_i(t_stack *stack)
 {
-	int i;
+	int	i;
 
 	i = stack->top;
 	while (i > 0)
@@ -23,12 +23,12 @@ int is_sorted_i(t_stack *stack)
 			return (i);
 		i--;
 	}
-	return (0); 
+	return (0);
 }
 
-int is_sorted_d(t_stack *stack)
+int	is_sorted_d(t_stack *stack)
 {
-	int i;
+	int	i;
 
 	i = stack->top - 1;
 	while (i >= 0)
@@ -39,4 +39,3 @@ int is_sorted_d(t_stack *stack)
 	}
 	return (0);
 }
-

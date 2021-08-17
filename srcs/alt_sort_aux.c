@@ -6,15 +6,15 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 15:37:37 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/12 10:55:24 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/17 11:26:47 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int best_neg(t_stack *a, t_stack *b, int best_a, int best_b)
+int	best_neg(t_stack *a, t_stack *b, int best_a, int best_b)
 {
-	int moves;
+	int	moves;
 
 	moves = 0;
 	while (best_a < 0 && best_b < 0)
@@ -30,10 +30,10 @@ int best_neg(t_stack *a, t_stack *b, int best_a, int best_b)
 	return (moves);
 }
 
-int best_pos(t_stack *a, t_stack *b, int best_a, int best_b)
+int	best_pos(t_stack *a, t_stack *b, int best_a, int best_b)
 {
-	int moves;
-	
+	int	moves;
+
 	moves = 0;
 	while (best_a > 0 && best_b > 0)
 	{
@@ -48,9 +48,9 @@ int best_pos(t_stack *a, t_stack *b, int best_a, int best_b)
 	return (moves);
 }
 
-int best_mix(t_stack *a, t_stack *b, int best_a, int best_b)
+int	best_mix(t_stack *a, t_stack *b, int best_a, int best_b)
 {
-	int moves;
+	int	moves;
 
 	moves = 0;
 	while (best_a < 0)
@@ -76,9 +76,9 @@ int best_mix(t_stack *a, t_stack *b, int best_a, int best_b)
 	return (moves);
 }
 
-int alt_sort(t_stack *a, t_stack *b)
+int	alt_sort(t_stack *a, t_stack *b)
 {
-	int moves;
+	int	moves;
 
 	moves = push_b(b, a) + push_b(b, a) + push_b(b, a);
 	moves += three_b(b);
@@ -91,10 +91,10 @@ int alt_sort(t_stack *a, t_stack *b)
 	return (moves);
 }
 
-int three_b(t_stack *b)
+int	three_b(t_stack *b)
 {
-	int high;
-	int low;
+	int	high;
+	int	low;
 
 	if (is_sorted_d(b) == 0)
 		return (0);
@@ -102,13 +102,12 @@ int three_b(t_stack *b)
 	low = find_lowest(b);
 	if (low == 0)
 		return (swap_b(b));
-	if (low == 1 && high == 0) 
+	if (low == 1 && high == 0)
 		return (rev_rotate_b(b));
 	if (low == 1 && high == 2)
-		return (rev_rotate_b(b) + swap_b(b)); 
-	if (low == 2 && high == 0) 
+		return (rev_rotate_b(b) + swap_b(b));
+	if (low == 2 && high == 0)
 		return (rotate_b(b) + swap_b(b));
 	else
 		return (rotate_b(b));
 }
-

@@ -6,17 +6,17 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 09:31:10 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/06 17:35:22 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/17 11:28:30 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int find_highest(t_stack *stack)
+int	find_highest(t_stack *stack)
 {
-	int i;
-	int highest;
-	int position;
+	int	i;
+	int	highest;
+	int	position;
 
 	i = 0;
 	highest = stack->table[i];
@@ -34,4 +34,3 @@ int find_highest(t_stack *stack)
 	}
 	return (position);
 }
-

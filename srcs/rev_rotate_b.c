@@ -6,16 +6,16 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 10:18:20 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/06 16:35:32 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/17 11:34:46 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int rev_rotate_b(t_stack *b)
+int	rev_rotate_b(t_stack *b)
 {
-	int temp;
-	int i;
+	int	temp;
+	int	i;
 
 	if (b->top < 0)
 		return (0);
@@ -30,4 +30,3 @@ int rev_rotate_b(t_stack *b)
 	ft_putstr_fd("rrb\n", 1);
 	return (1);
 }
-

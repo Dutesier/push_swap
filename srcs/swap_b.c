@@ -6,15 +6,15 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 19:46:51 by dareias-          #+#    #+#             */
-/*   Updated: 2021/06/08 18:31:11 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/17 11:42:35 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int swap_b(t_stack *b)
+int	swap_b(t_stack *b)
 {
-	int temp;
+	int	temp;
 
 	if (b->top <= 0)
 		return (0);
@@ -24,4 +24,3 @@ int swap_b(t_stack *b)
 	ft_putstr_fd("sb\n", 1);
 	return (1);
 }
-

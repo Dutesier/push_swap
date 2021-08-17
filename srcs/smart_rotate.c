@@ -6,20 +6,16 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 11:38:24 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/12 11:42:40 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/17 11:37:35 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-// Find best way to rotate an element to the top of the stack
-// Returns negative number of moves to get element to top with reverse rotate
-// and positive number of moves to get element to top with rotate
-
-int smart_rotate(t_stack *stack, int position)
+int	smt_r(t_stack *stack, int position)
 {
-	int to_top;
-	int to_bot;
+	int	to_top;
+	int	to_bot;
 
 	to_top = stack->top - position;
 	to_bot = position + 1;
@@ -29,9 +25,9 @@ int smart_rotate(t_stack *stack, int position)
 		return (-to_bot);
 }
 
-int to_top_a(t_stack *stack, int smart)
+int	to_top_a(t_stack *stack, int smart)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (smart == 0)

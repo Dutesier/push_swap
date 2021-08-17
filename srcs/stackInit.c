@@ -6,15 +6,15 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 16:41:17 by dareias-          #+#    #+#             */
-/*   Updated: 2021/06/07 16:47:30 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/17 11:41:45 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_stack *stackInit(unsigned size)
+t_stack	*stackInit(unsigned int size)
 {
-	t_stack *stack;
+	t_stack	*stack;
 
 	stack = (t_stack*)malloc(sizeof(t_stack));
 	if (!stack)
@@ -22,8 +22,7 @@ t_stack *stackInit(unsigned size)
 	stack->size = size;
 	stack->top = -1;
 	stack->table = (int *)malloc(size * sizeof(int));
-	if(!stack->table)
+	if (!stack->table)
 		return (0);
 	return (stack);
 }
-
