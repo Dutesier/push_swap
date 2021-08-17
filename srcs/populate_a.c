@@ -6,7 +6,7 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 17:00:04 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/17 11:33:04 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/17 12:57:34 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,10 @@ static int	is_repeat(t_stack *a)
 		while (j <= a->top)
 		{
 			if (buffer[x] == a->table[j++])
-				return (0);
+			{
+				free(buffer);
+				return (-2);
+			}
 		}
 		x++;
 	}
@@ -62,7 +65,7 @@ t_stack	*populate_a(t_stack *stack, char *population[])
 		stack->top++;
 		i++;
 	}
-	if (is_repeat(stack) == 0)
+	if (is_repeat(stack) < 0)
 		return (0);
 	return (stack);
 }

@@ -6,7 +6,7 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 14:06:09 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/17 11:23:16 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/17 13:11:14 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "../libft/libft.h"
+# include <stdio.h> // REMOVE THIS SHIT !!!!!!!!!
 
 typedef struct s_stack
 {

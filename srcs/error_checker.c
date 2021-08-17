@@ -6,11 +6,22 @@
 /*   By: dareias- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 12:57:38 by dareias-          #+#    #+#             */
-/*   Updated: 2021/08/17 11:27:40 by dareias-         ###   ########.fr       */
+/*   Updated: 2021/08/17 12:18:26 by dareias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+static char	*pre_check(char *str)
+{
+	if (*str == '\0')
+		return (NULL);
+	while ((8 < *str && *str < 14) || *str == 32)
+		str++;
+	if (*str == '\0')
+		return (NULL);
+	return (str);
+}
 
 static int	str_check(char *str)
 {
@@ -19,8 +30,9 @@ static int	str_check(char *str)
 
 	atoix = 0;
 	neg = 1;
-	while ((8 < *str && *str < 14) || *str == 32)
-		str++;
+	str = pre_check(str);
+	if (str == NULL)
+		return (0);
 	if (*str == '+' || *str == '-')
 	{
 		if (*str == '-')
