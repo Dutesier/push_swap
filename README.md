@@ -4,10 +4,9 @@ This project involves sorting data on a stack, with a limited set of instruction
 To make this happen, we will have to manipulate various sorting algorithms and choose the most appropriate solution(s) for optimized data sorting.
 
 ### Premise
-The Push_swap project is a very simple and highly effective algorithm project: data will
-need to be sorted. We have at your disposal a set of int values, 2 stacks and a set of instructions to manipulate both stacks.
-Our goal? Write a program in C called push_swap which calculates and displays on the standard output the smallest program using *Push_swap instruction language* that
-sorts the integer arguments received.
+The Push_swap project is a very simple and highly effective algorithm project: data will need to be sorted. We have at our disposal a set of int values, 2 stacks and a set of instructions to manipulate both stacks.
+
+Our goal? Write a program in C called push_swap which calculates and displays on the standard output the smallest program using *Push_swap instruction language* that sorts the integer arguments received.
 
 ### Push Swap Instruction Language
 | Instruction | Description |
@@ -29,5 +28,6 @@ The game is composed of 2 stacks named a and b.
 To start with:
  - the stack a contains a random amount of negative and/or positive numbers
    which cannot be duplicated.
- - b is empty
-The goal is to sort in ascending order numbers into stack a.
+ - b is empty.
+
+The goal is to sort in ascending order the numbers into stack a.
